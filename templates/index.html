@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShortReel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <h1>Short film</h1>
+        <p>Watch a selection of short films</p>
+    </header>
+
+    <div class="videos-container">
+        {% for video in videos %}
+        <div class="video">
+            <h2>{{ video.title }}</h2>
+            <iframe src="https://www.youtube.com/embed/{{ video.video_id }}" allowfullscreen></iframe>
+        </div>
+        {% endfor %}
+    </div>
+
+    <footer>
+        <p>© 2025 ShortReel - All rights reserved.</p>
+    </footer>
+</body>
+</html>
